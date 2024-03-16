@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Editor</title>
+    <style>
+        .doc-list {
+            margin-bottom: 20px;
+        }
+
+        .doc-item {
+            margin-bottom: 5px;
+        }
+
+        #editor-container, #viewer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2>Documents</h2>
+<div class="doc-list" id="docList"></div>
+<button onclick="showCreateDocument()">Create New Document</button>
+<div id="createDocument" style="display:none;">
+    <input type="text" id="newDocName" placeholder="Document Name">
+    <button onclick="createDocument()">Create</button>
+</div>
+<div>
+    <p>Status: <span id="status">Disconnected</span></p>
+</div>
+<br><br>
+<div id="editor-container">
+<label for="editor"></label><textarea id="editor"></textarea>
+    <br><br>
+    <button onclick="saveCurrent()">Save</button>
+    <button onclick="endEditSession()">End</button>
+</div>
+<div id="viewer"></div>
+
+<script src="/main.js"></script>
+</body>
+</html>
